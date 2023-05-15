@@ -8,26 +8,22 @@
     4 - Parcelado em 3x ou mais = 10% de juros
 */
 
+const valProduto = 100;
+const tipoPag = 4;
 
-function calcularPreco(valProduto, tipoPag) {
+function calcValor(valProduto, tipoPag) {
     if (tipoPag === 1) {
         return ('Você terá um desconto de 10% e pagará R$' + (valProduto * 0.9).toFixed(2));
     } else if (tipoPag === 2) {
         return ('Você terá um desconto de 15% e pagará R$' + (valProduto * 0.85).toFixed(2));
     } else if (tipoPag === 3) {
         return ('Valor sem desconto R$' + (valProduto).toFixed(2));
-    } else if (valProduto === 4) {
-        return ('O valor parcelado ficará R$' + (valProduto * 1.1).toFixed(2));
     } else {
-        return ("Forma de pagamento inválida. Escolha uma forma de pagamneto de acordo com a tabela")
+        return ('O valor parcelado ficará R$' + (valProduto * 1.1).toFixed(2));
     }
 }
 
-
-const valProduto = 100;
-const tipoPag = 4;
-
-console.log(calcularPreco(valProduto, tipoPag));
+console.log(calcValor(valProduto, tipoPag));
 
 
 
