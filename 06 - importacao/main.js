@@ -1,5 +1,5 @@
 
-const { gets , print }= require('./funcoes-auxiares'); //seleciona a pasta que esta o arquivo a ser importado
+const { gets, print, entradas } = require('./funcoes-auxiares'); //seleciona a pasta que esta o arquivo a ser importado
 
 /*
     Dado um sorteio de 5 números que vão de 1 - 100,
@@ -15,24 +15,14 @@ const { gets , print }= require('./funcoes-auxiares'); //seleciona a pasta que e
     saída esperada: 
     98
 */
+const totSorteio = gets();
+let maiorValor = 0;
 
-const numerosSorteados = [];
-
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < totSorteio; i++) {
     const numeroSorteado = gets();
-    numerosSorteados.push(numeroSorteado);
-}
-
-
-
-let maior = 0;
-
-for (let i = 0; i < numerosSorteados.length; i++) {
-    const numeroSorteado =numerosSorteados[i];
-
-    if(numeroSorteado > maior) {
-        maior = numeroSorteado;
+    if (numeroSorteado > maiorValor) {
+        maiorValor = numeroSorteado;
     }
 }
 
-print(maior);
+print(maiorValor);
